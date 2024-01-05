@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Table Booking</title>
+    </head>
+    <body>
+        <nav></nav>
+        <main>
+        <h1>BOOK A TABLE</h1>
+        <form action="POST">
+            <div>
+                <label for="booking_date">Booking Date</label>
+                <input type="date" name="booking_date" id="booking_date">
+            </div>
+            <div>
+                <label for="booking_people">Booking people</label>
+                <input type="range" name="booking_people" id="booking_people" min="2" max="10" value="4" oninput="this.nextElementSibling.value = this.value"> <!---here value is default value which we can set and oninput is small js code which used to change value of next element --->
+                <output>4</output>
+            </div>
+            <div>
+                <label for="booking_location">Location</label>
+                <input id="booking_location" name="booking_location" list="locations">
+                <datalist id="locations">
+                    <option value="Surat"></option>
+                    <option value="Bharuch"></option>
+                </datalist>
+            </div>
+            <!-- fieldset part radio buttons in group without using it will be in same group -->
+            <fieldset id="location">
+            <label>
+                <input type="radio" name="location" value="indoors" checked />
+                Indoors
+                <!--- because of this is common reservation it will be selected default --->
+            </label>
+
+            <label>
+                <input type="radio" name="location" value="outdoors" /> Outdoors
+            </label>
+            </fieldset>
+            <button type="submit">Book Table</button>
+        </form>
+        </main>
+        <footer>
+        <p>Copyright Darshil T</p>
+        </footer>
+    </body>
+</html>
