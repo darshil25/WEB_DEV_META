@@ -1,0 +1,28 @@
+.row{
+    display: flex;
+    gap:30px;
+}
+.row .label{
+    flex: 0 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.row .container{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+.row .dish{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pavbhaji{
+    background-color: rgb(167, 67, 67);
+}
+.pulav{
+    background-color: rgb(170, 137, 64);
+}
+.gotalo{
+    background-color: antiquewhite;
+}
