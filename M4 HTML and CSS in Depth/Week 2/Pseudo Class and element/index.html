@@ -11,9 +11,16 @@
         a[href]{
             color: brown;
         }
+        a:visited{
+            color: blueviolet;
+        }
         a:hover{
             background-color: pink;
             color: aqua;
+        }
+        a:active{
+            background-color: aquamarine;
+            color: rgb(14, 68, 17);
         }
         .mybutton:active{
             background-color: darkgoldenrod;
@@ -23,12 +30,32 @@
         .mybutton{
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
+        .para{
+            border: 10px;
+            padding: 10px;
+        }
+        .para:hover{
+            box-shadow: 5px 0 25px black;
+        }
+        .para::selection{
+            background-color: greenyellow;
+            color: white;
+        }
+        .para::first-letter{
+            font-size: 1.5rem;
+            color: red;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
     <p class="mypage">Visit the link here: 
-        <a href="#">Hover the link</a>
+        <a href="https://www.google.com">Hover the link</a>
     </p>
+
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio vero consequatur atque cupiditate quae quod impedit necessitatibus mollitia qui velit sint, fugiat est repudiandae reiciendis debitis ut earum molestias asperiores doloremque repellat, saepe minima laborum.
+    </p>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste cumque voluptas perferendis dolorum veniam, nobis dolor laboriosam numquam repellat enim repudiandae quis porro. Quas laborum, suscipit inventore expedita sed facere iusto eius? Error, eveniet dolorum?</p>
 
     <div class="wrapper">
         <button class="mybutton">Click and Hold this button</button>
