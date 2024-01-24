@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Effects</title>
+    <style>
+        .box{
+            display: grid;
+            width: 240px;
+            height: 240px;
+            margin: 100px;
+            background-color: green;
+            border: 4px solid rgb(104, 201, 133);
+            border-radius: 10px;
+        }
+
+        .box:hover{
+            background-color: royalblue;
+            transform: scaleX(1.5) rotate(45deg);
+            transition: 4s ;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
