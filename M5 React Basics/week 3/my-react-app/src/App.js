@@ -1,24 +1,68 @@
+import {
+  useState,
+  useRef
+} from "react";
 import "./App.css";
-import Homepage from "./Homepage";
-import Contact from "./Contact";
-import AboutLittleLemon from "./AboutLittleLemon";
-import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
+  const inputRef = useRef(null);
+  const resultRef = useRef(null);
+  const [result, setResult] = useState(0);
+
+  function plus(e) {
+    e.preventDefault();
+    setResult((result) => result + Number(inputRef.current.value));
+  };
+
+  function minus(e) {
+    e.preventDefault();
+    setResult((result) => result - Number(inputRef.current.value));
+  };
+
+  function times(e) {
+    e.preventDefault();
+    setResult((result) => result * Number(inputRef.current.value));
+  }
+
+  function divide(e) {
+    e.preventDefault();
+    setResult((result) => result / Number(inputRef.current.value));
+  };
+
+  function resetInput(e) {
+    e.preventDefault();
+    inputRef.current.value = 0;
+  };
+
+  function resetResult(e) {
+    e.preventDefault();
+    setResult(0);
+  };
+
   return (
-    <div>
-      <nav>
-        <Link to="/contact" className="nav-item">Contact Little Lemon</Link>
-        <Link to="/" className="nav-item">Homepage</Link>
-        <Link to="/about" className="nav-item">About Little Lemon</Link>
-      </nav>
-      <Routes>
-        <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/" element={<Homepage />}></Route>
-        <Route path="/about" element={<AboutLittleLemon />}></Route>
-      </Routes>
+    <div className="App">
+      <div>
+        <h1>Simplest Working Calculator</h1>
+      </div>
+      <form>
+        <p ref={resultRef}>
+          {result}
+        </p>
+        <input
+          pattern="[0-9]"
+          ref={inputRef}
+          type="number"
+          placeholder="Type a number"
+        />
+        <button onClick={plus}>add</button>
+        <button onClick={plus}>substract</button>
+        <button onClick={plus}>multiply</button>
+        <button onClick={plus}>divide</button>
+        <button onClick={plus}>reset Input</button>
+        <button onClick={plus}>reset Result</button>
+      </form>
     </div>
   );
-};
+}
 
 export default App;
